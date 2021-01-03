@@ -3,18 +3,14 @@ package Pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage {
-    private WebDriver driver;
-    private WebDriverWait wait;
-    private Actions action;
+import Util.PageUtil;
+
+public class HomePage extends PageUtil {
 
 
     private final By accountPanel = By.id("account-navigation-container");
@@ -27,40 +23,36 @@ public class HomePage {
 
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        this.action = new Actions(driver);
-
+        super(driver);
     }
 
-
     public boolean validateLogin() {
-        return driver.findElement(accountBtn).isDisplayed();
-
+        return isElementDisplayed(accountBtn);
     }
 
     public String getPageTitle() {
-        return driver.getTitle();
+        return pageTitle();
     }
 
     public void moveCursorToAccountBtn() {
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated(accountBtn));
-        action.moveToElement(driver.findElement(accountBtn)).perform();
+        waitUntilElementVisible(accountBtn);
+        moveCursorToElement(accountBtn).perform();
     }
 
     public boolean validateAccountDropdown() {
-
-        return driver.findElement(accountPanel).isDisplayed();
+        return isElementDisplayed(accountPanel);
+    }
+    public boolean validateGenderPopupClosed(){
+        return isElementDissapeared(genderPopupContainer);
     }
 
     public int getAccountDropdownCount() {
-        return driver.findElements(getAccountPanelItem).size();
+        return findElements(getAccountPanelItem).size();
     }
 
     public List<String> getAccountDropdownList() {
         List<String> accountDropDown = new ArrayList<>();
-        List<WebElement> accountDropDownItems = driver.findElements(getAccountPanelItem);
+        List<WebElement> accountDropDownItems = findElements(getAccountPanelItem);
 
         for (WebElement e : accountDropDownItems) {
             String text = e.getText();
@@ -70,40 +62,32 @@ public class HomePage {
     }
 
     public boolean validateGenderPopUp() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(genderPopupContainer));
-        return driver.findElement(genderPopupContainer).isDisplayed();
+        return isElementDisplayed(genderPopupContainer);
     }
 
     public boolean validateGenderButtonWomen() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(genderBtnWomen));
-        return driver.findElement(genderBtnWomen).isDisplayed();
+        return isElementDisplayed(genderBtnWomen);
     }
 
     public boolean validateGenderButtonMan() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(genderBtnMan));
-        return driver.findElement(genderBtnMan).isDisplayed();
+        return isElementDisplayed(genderBtnMan);
     }
 
     public boolean validateCloseBtn() {
-        wait.until(ExpectedConditions.visibilityOfElementLocated(genderPopupCloseBtn));
-        return driver.findElement(genderPopupCloseBtn).isDisplayed();
+        return isElementDisplayed(genderPopupCloseBtn);
     }
 
-    public boolean validateGenderPopupClosed() {
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(genderPopupContainer));
-        return driver.findElement(genderPopupContainer).isDisplayed();
-    }
 
     public void clickGenderPopupCloseBtn() {
-        driver.findElement(genderPopupCloseBtn).click();
+        click(genderPopupCloseBtn);
     }
 
     public void clickGenderGenderWomenBtn() {
-        driver.findElement(genderBtnWomen).click();
+        click(genderBtnWomen);
     }
 
     public void clickGenderGenderManBtn() {
-        driver.findElement(genderPopupCloseBtn).click();
+        click(genderPopupCloseBtn);
     }
 }
 

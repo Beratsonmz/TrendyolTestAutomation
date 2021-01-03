@@ -1,12 +1,13 @@
 package Pages;
 
+import Util.PageUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class LoginPage {
-    private WebDriver driver;
+public class LoginPage extends PageUtil {
+
 
     private final By emailField = By.id("login-email");
     private final By passwordField = By.id("login-password-input");
@@ -16,31 +17,31 @@ public class LoginPage {
 
 
     public LoginPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
     }
 
     public String getPageTitle() {
-        return driver.getTitle();
+        return pageTitle();
     }
 
     public boolean isForgotPwdLinkExist() {
-        return driver.findElement(forgotPasswordLink).isDisplayed();
+        return isElementDisplayed(forgotPasswordLink);
     }
 
     public void setEmail(String email) {
-        driver.findElement(emailField).sendKeys(email);
+        sendKeys(emailField, email);
     }
 
     public void setPassword(String password) {
-        driver.findElement(passwordField).sendKeys(password);
+        sendKeys(passwordField, password);
     }
 
     public void clickLoginBtn() {
-        driver.findElement(loginBtn).click();
+        click(loginBtn);
     }
 
     public String getErrorMessage() {
-        return driver.findElement(errorMsg).getText();
+        return getElementsText(errorMsg);
 
     }
 
@@ -48,7 +49,7 @@ public class LoginPage {
         setEmail(mail);
         setPassword(password);
         clickLoginBtn();
-        return new HomePage(driver);
+        return new HomePage(getwebdriver());
     }
 
 
