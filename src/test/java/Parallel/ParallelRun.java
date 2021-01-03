@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 
 
 @CucumberOptions(
-        features = {"src/test/resources/Features/Parallel"},
+        features = {"src/test/resources/Parallel/Features/"},
         glue = {"Parallel"},
         plugin = {"pretty"}
 )
