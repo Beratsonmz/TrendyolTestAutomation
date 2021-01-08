@@ -23,19 +23,20 @@ public class DriverFactory {
      */
     public WebDriver initDriver(String browserName) {
 
-        if (browserName.equals("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
-            threadLocal.set(new ChromeDriver());
-        } else if (browserName.equals("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
-            threadLocal.set(new FirefoxDriver());
-        } else if (browserName.equals("safari")) {
-            System.setProperty("webdriver.safari.driver", "src/main/resources/safaridriver");
-            threadLocal.set(new SafariDriver());
-
-
+        switch (browserName) {
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver");
+                threadLocal.set(new ChromeDriver());
+                break;
+            case "firefox":
+                System.setProperty("webdriver.gecko.driver", "src/main/resources/geckodriver");
+                threadLocal.set(new FirefoxDriver());
+                break;
+            case "safari":
+                System.setProperty("webdriver.safari.driver", "src/main/resources/safaridriver");
+                threadLocal.set(new SafariDriver());
+                break;
         }
-
         getDriver().manage().window().maximize();
         getDriver().manage().deleteAllCookies();
         return getDriver();

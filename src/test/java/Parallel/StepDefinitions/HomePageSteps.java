@@ -82,5 +82,9 @@ public class HomePageSteps {
         Assert.assertEquals(boutiquePage.findActiveTabText(), "KADIN");
     }
 
+    @When("user randomly clicks one of the boutique link")
+    public void userRandomlyClicksOneOfTheBoutiqueLink() {
+        homePage.clickRandomBoutique();
+    }
 
 }
