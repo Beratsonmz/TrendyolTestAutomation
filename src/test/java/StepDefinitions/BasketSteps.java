@@ -1,10 +1,10 @@
-package Parallel.StepDefinitions;
+package StepDefinitions;
 
 import Factory.DriverFactory;
 import Pages.BasketPage;
-import Pages.BoutiquePage;
 import io.cucumber.java.en.Then;
-import org.testng.Assert;
+import org.junit.Assert;
+
 
 public class BasketSteps {
     private BasketPage basketPage = new BasketPage(DriverFactory.getDriver());

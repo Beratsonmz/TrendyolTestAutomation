@@ -1,4 +1,4 @@
-package Parallel.StepDefinitions;
+package StepDefinitions;
 
 import Factory.DriverFactory;
 import Pages.HomePage;
@@ -6,7 +6,8 @@ import Pages.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-import org.testng.Assert;
+import org.junit.Assert;
+
 
 
 public class LoginSteps {

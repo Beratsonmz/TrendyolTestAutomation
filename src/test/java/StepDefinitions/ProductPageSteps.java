@@ -1,4 +1,4 @@
-package Parallel.StepDefinitions;
+package StepDefinitions;
 
 import Factory.DriverFactory;
 import Pages.ProductPage;

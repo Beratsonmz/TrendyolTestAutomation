@@ -52,9 +52,10 @@ Feature: Home Page Feature
     Given User is on Home Page
     When Gender popup appears
     And User clicks on close button
-    Then user randomly clicks one of the boutique link
+    And user randomly clicks one of the boutique link
     And user randomly clicks one of the search category link from slider
     And user selects random item from results
     And user add that item to the basket
-    And user displays basket
+    Then user displays basket
     And item count should be 1
+

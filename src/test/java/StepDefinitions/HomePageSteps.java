@@ -1,4 +1,4 @@
-package Parallel.StepDefinitions;
+package StepDefinitions;
 
 import Factory.DriverFactory;
 import Pages.BoutiquePage;
@@ -8,7 +8,8 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
+import org.junit.Assert;
+
 
 import java.util.List;
 import java.util.Map;

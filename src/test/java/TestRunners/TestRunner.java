@@ -6,10 +6,9 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features =  {"src/test/resources/Parallel/"},
-        glue = {"Parallel"},
-        plugin = {"pretty",
-                  "timeline:test-output-thread/"}
+        features =  {"src/test/resources/Features/"},
+        glue = {"StepDefinitions","AppHooks"},
+        plugin = {"pretty"}
 )
 
 public class TestRunner {

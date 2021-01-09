@@ -1,4 +1,4 @@
-package Parallel.AppHooks;
+package AppHooks;
 
 import Factory.DriverFactory;
 

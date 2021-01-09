@@ -1,1 +1,0 @@
-Feature: Boutique Page Feature
