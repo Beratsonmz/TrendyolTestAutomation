@@ -6,16 +6,16 @@ import org.openqa.selenium.WebDriver;
 
 public class ProductPage extends PageUtil {
 
-    private final By addToBasketBtn = By.cssSelector(".add-to-bs-tx");
-    private final By basketBtn = By.xpath("//p[contains(text(),'Sepetim')]");
+    private final By addToCartBtn = By.cssSelector(".add-to-bs-tx");
+    private final By cartBtn = By.xpath("//p[contains(text(),'Sepetim')]");
     public ProductPage(WebDriver driver) {
         super(driver);
     }
 
-    public void addToBasket() {
-        click(addToBasketBtn);
+    public void addToCart() {
+        click(addToCartBtn);
     }
-    public void goToBucket(){
-        click(basketBtn);
+    public void goToCart(){
+        click(cartBtn);
     }
 }

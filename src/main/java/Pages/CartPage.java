@@ -8,18 +8,18 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class BasketPage extends PageUtil {
+public class CartPage extends PageUtil {
 
-    private final By basketItems = By.className("pb-basket-item");
+    private final By cartItems = By.className("pb-basket-item");
 
-    public BasketPage(WebDriver driver) {
+    public CartPage(WebDriver driver) {
         super(driver);
     }
 
-    public int countBasket() {
+    public int countCart() {
         try {
-            List<WebElement> basketItemList = findElements(basketItems);
-            return basketItemList.size();
+            List<WebElement> cartItemList = findElements(cartItems);
+            return cartItemList.size();
         } catch (NoSuchElementException e) {
             return 0;
         }

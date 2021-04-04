@@ -44,7 +44,7 @@ public class HomePage extends PageUtil {
         return isElementDisplayed(accountPanel);
     }
     public boolean validateGenderPopupClosed(){
-        return isElementDissapeared(genderPopupContainer);
+        return isElementDisappeared(genderPopupContainer);
     }
 
     public int getAccountDropdownCount() {

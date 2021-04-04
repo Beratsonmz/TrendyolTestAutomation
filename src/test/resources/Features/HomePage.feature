@@ -48,14 +48,14 @@ Feature: Home Page Feature
     And Page title should be "Kadın, Moda, Giyim, Stil, Giyim Markaları | Trendyol"
 
   @Guest
-  Scenario: Add Random Product to the Basket
+  Scenario: Add Random Product to the Cart
     Given User is on Home Page
     When Gender popup appears
     And User clicks on close button
     And user randomly clicks one of the boutique link
     And user randomly clicks one of the search category link from slider
     And user selects random item from results
-    And user add that item to the basket
-    Then user displays basket
+    And user add that item to the cart
+    Then user displays cart
     And item count should be 1
 

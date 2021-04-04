@@ -7,13 +7,13 @@ import io.cucumber.java.en.Then;
 public class ProductPageSteps {
     private ProductPage productPage = new ProductPage(DriverFactory.getDriver());
 
-    @Then("user add that item to the basket")
-    public void userAddThatItemToTheBasket() {
-        productPage.addToBasket();
+    @Then("user add that item to the cart")
+    public void userAddThatItemToTheCart() {
+        productPage.addToCart();
     }
 
-    @Then("user displays basket")
-    public void userDisplaysBasket() {
-        productPage.goToBucket();
+    @Then("user displays cart")
+    public void userDisplaysCart() {
+        productPage.goToCart();
     }
 }

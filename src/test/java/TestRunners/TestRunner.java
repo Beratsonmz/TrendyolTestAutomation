@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features =  {"src/test/resources/Features/"},
         glue = {"StepDefinitions","AppHooks"},
-        plugin = {"pretty"}
+        plugin = {"pretty",
+        "timeline:test-output-thread/"}
 )
 
 public class TestRunner {

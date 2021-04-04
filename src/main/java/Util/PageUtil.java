@@ -22,7 +22,7 @@ public class PageUtil {
         this.action = new Actions(driver);
     }
 
-    public WebDriver getwebdriver() {
+    public WebDriver getWebdriver() {
         return driver;
     }
 
@@ -63,7 +63,7 @@ public class PageUtil {
         return findElement(by).isDisplayed();
     }
 
-    public boolean isElementDissapeared(By by) {
+    public boolean isElementDisappeared(By by) {
         try {
             waitUntilElementInvisible(by);
         } catch (NoSuchElementException e) {

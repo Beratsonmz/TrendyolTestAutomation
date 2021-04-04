@@ -49,7 +49,7 @@ public class LoginPage extends PageUtil {
         setEmail(mail);
         setPassword(password);
         clickLoginBtn();
-        return new HomePage(getwebdriver());
+        return new HomePage(getWebdriver());
     }
 
 
